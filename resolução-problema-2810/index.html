@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //variáveis
+    var pedido = 1;
+
+    //apresentação da empresa
+    alert("Seja bem-vindo(a) a Savinis!");
+
+    //declaração da quantidade e soma
+    var quantidadeI = parseInt(prompt("Saldo atual em estoque:"));
+    var soma = quantidadeI
+
+    //
+    while (pedido != 0) {
+        var escolha = parseInt(prompt("Você quer continuar abastecendo o estoque(1) ou comprar peças(2)?"))
+        if (escolha == 1) {
+            soma = soma + parseInt(prompt("Quantas peças serão adicionadas ao sistema"))
+            alert("Saldo atual: " + soma);
+            var cont = parseInt(prompt("Você deseja continuar com a entrada de dados(1) ou não(2)?"));
+            if (cont == 2) {
+                pedido = 0;
+            }
+        }
+        else if (escolha == 2) {
+            var sub = parseInt(prompt("Quantas peças você quer comprar?"));
+            if (sub <= soma) {
+                soma = soma - sub;
+                alert("Saldo atual: " + soma);
+                var cont = parseInt(prompt("Você deseja continuar com a entrada de dados(1) ou não(2)?"));
+                if (cont == 2) {
+                    pedido = 0;
+                }
+            } else {
+                alert("Saldo Insuficiente!")
+                var cont = parseInt(prompt("Você deseja continuar com a entrada de dados(1) ou não(2)?"));
+                if (cont == 2) {
+                    pedido = 0;
+                }
+            }
+        }
+        else {
+            pedido = 0;
+        }
+    }
+    alert("Sistema Encerrado!")
+</script>
+
+</html>
